@@ -118,6 +118,9 @@ for a in range(len(sites)):
             if name.text.strip()=="Out of stock":
                 availability="Sold Out"
             else:
+                pricingData=soup.find('span',
+                          attrs={'class':'price','itemprop':"price"})
+                pricing=pricingData.text.strip()
                 availability="Available"
         #Code for Thingbits
         elif sites[a]=="Thingbits":
