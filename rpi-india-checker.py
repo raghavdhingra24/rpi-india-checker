@@ -110,6 +110,9 @@ for a in range(len(sites)):
                 availability="Sold Out"
             else:
                 availability="Available"
+                pricingData=soup.find('span',
+                                  attrs={'class','woocommerce-Price-amount amount'})
+                pricing=pricingData.text.strip()
         #Code for Silverline
         elif sites[a]=="Silverline Electronics":
             for b in soup.findAll('p',
